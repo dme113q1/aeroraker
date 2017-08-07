@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message Task {
+    int32 task_id = 1;
+    string origin = 2;
+    string destination = 3;
+    string search_date_start = 4;
+    string search_date_end = 5;
+}
+
+message Tasks {
+    repeated Task list = 1;
+}
+
+message Price {
+    int32 amount = 1;
+    string date = 2;
+    int32 task_id = 3;
+}
+
+message Prices {
+    repeated Price list = 1;
+}
