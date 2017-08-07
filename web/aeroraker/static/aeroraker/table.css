@@ -1,0 +1,31 @@
+/* table css */
+table, th, td
+{
+border: 1px solid #64A9D2;
+}
+table
+{
+/* slim borders */
+border-collapse:collapse;
+}
+th, td
+{
+/* space between border and text */
+/* top right bottom left */
+padding:5px 15px 5px 15px;
+font-family:sans-serif;
+}
+th
+{
+background-color:#2785BE;
+color:white;
+}
+tr
+{
+background-color:#F6F6F6
+}
+tr.is_not_done
+{
+background-color:#FFB6A0
+}
+

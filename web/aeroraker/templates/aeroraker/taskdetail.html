@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'aeroraker/table.css' %}" />
+
+<h2>Task info</h2>
+<table>
+<tr>
+    <td>id:</td>
+    <td>{{task.id}}</td>
+</tr>
+<tr>
+    <td>origin:</td>
+    <td>{{task.origin}}</td>
+</tr>
+<tr>
+    <td>destination:</td>
+    <td>{{task.destination}}</td>
+</tr>
+<tr>
+    <td>search_date_start:</td>
+    <td>{{task.search_date_start}}</td>
+</tr>
+<tr>
+    <td>search_date_end:</td>
+    <td>{{task.search_date_end}}</td>
+</tr>
+<tr>
+    <td>ts:</td>
+    <td>{{task.ts}}</td>
+</tr>
+</table>
+
+<h2>Prices</h2>
+<table>
+<tr>
+    <th>date</th>
+    <th>amount</th>
+</tr>
+{% for price in task.price_set.all|dictsort:"date" %}
+    <tr>
+        <td>{{price.date}}</td>
+        <td>{{price.amount}}</td>
+    </tr>
+{% endfor %}
+</table>

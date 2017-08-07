@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'aeroraker/table.css' %}" />
+
+<script type="text/javascript" src="/javascript/jquery/jquery.js"></script>
+<script type="text/javascript" src="{% static 'aeroraker/tasks.js' %}"></script>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+    get_tasks("{% url 'aeroraker:task' %}");
+});
+</script>
+
+<h3>Welcome to aeroraker</h3>
+
+<form action="" method="post">
+    {% csrf_token %}
+    roundtrip: {{ form.roundtrip }}
+    <br />
+    origin: {{ form.origin }}
+    destination: {{ form.destination }}
+    <br />
+    search_date_start :{{ form.search_date_start }}
+    search_date_end: {{ form.search_date_end }}
+    <br />
+    <input type="submit" value="ClickMe"/>
+</form>
+
+<div id="tasks_table"></div>
